@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "4d410f37-5b1f-4b49-9818-849336062858",
+		"name": "test-zebra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42125477"
+	},
+	"item": [
+		{
+			"name": "tender",
+			"item": [
+				{
+					"name": "TenderList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/tenders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tenders"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2022-08-14",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "посуда",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TenderCreate",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"external_code\": 15246718022,\n    \"number\": \"17660-2\",\n    \"status\": \"Закрыто test\",\n    \"name\": \"Лабороаторная посуда test\",\n    \"updated_at\": \"2022-08-14T19:25:14.000000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/tenders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tenders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TenderShow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/tenders/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"tenders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
